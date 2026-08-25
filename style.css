@@ -1,32 +1,5 @@
-// Smooth button feedback
-document.querySelectorAll(".btn").forEach(button => {
-  button.addEventListener("click", function () {
-    this.style.transform = "scale(0.97)";
-
-    setTimeout(() => {
-      this.style.transform = "";
-    }, 150);
-  });
-});
-
-// Simple scroll reveal
-const sections = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-
-sections.forEach(section => {
-  section.style.opacity = "0";
-  section.style.transform = "translateY(30px)";
-  section.style.transition = "opacity 0.7s ease, transform 0.7s ease";
-  observer.observe(section);
-});
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
